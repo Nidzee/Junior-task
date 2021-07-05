@@ -21,7 +21,7 @@ public class CubeController : MonoBehaviour
     private event _PlayerCollectsSphere _OnSphereCollected = delegate{ };  // Event of collecting sphere
 
 
-    private void Awake()
+    private void Start()
     {
         Instance = this;                  // Setting single reference to this instance
         _rb = GetComponent<Rigidbody>();  // Cashing physic component
@@ -174,11 +174,11 @@ public class CubeController : MonoBehaviour
 
             _targets.Remove(other.transform);    // Remove current target from list
 
-            Destroy(other.gameObject);          // Destroy sphere
+            Destroy(other.gameObject);           // Destroy sphere
 
             Instantiate(_particles, transform);  // Instantiate particles
             
-            GetNearestTarget();                 // Set new target to move to
+            GetNearestTarget();                  // Set new target to move to
         }
     }
 }

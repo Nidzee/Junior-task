@@ -46,6 +46,9 @@ public class SpawnerManager : MonoBehaviour
         // Instantiating prefab on calculated position
         GameObject sphere = Instantiate(_prefabToSpawn, randomPosition, Quaternion.identity); // Can be added sphere-pooler if necessary
 
+        // Set parent to spawner for easy hierarchy use
+        sphere.transform.parent = gameObject.transform;
+
         // Add new sphere to Cube's list of targets
         _OnSphereSpawned(sphere.transform);
     }
