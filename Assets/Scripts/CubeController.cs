@@ -125,9 +125,8 @@ public class CubeController : MonoBehaviour
                 // If we reached previous target - we must find new one which is nearest from all list
                 if (_targets.Count > 1)
                 {
-                    float distance = float.MaxValue;
-
-                    float tempDistance = 0; // Variable to store distance between "Cube" and particular target from list of targets
+                    float distance = float.MaxValue;    // Distance between current target (at first - unreal value)
+                    float tempDistance = 0;             // Variable to store distance between "Cube" and particular target from list of targets
 
                     foreach(var i in _targets)
                     {
